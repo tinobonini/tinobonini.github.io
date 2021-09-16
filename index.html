@@ -10,55 +10,98 @@
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
+      body {
+        margin: 0px;
+        
+      }
       .whitebox{
           background-color: white;
           border-radius: 12px;
-          width: 80%;
-          align-items: center;
-          
+          margin: auto;
+          width: 750px;
+          height: 400px;
+         
+
+          display: grid;
+          grid-template-columns: [col1] 50% [col2] 50%;
+           
+         /*  position: relative; */
+         
       }
       .titleFAQ{
           font-weight: bold;
       }
       .fondogradiente {
+        display: flex;
         background-image: linear-gradient(#E940D7, #941FCF);
         background-repeat: no-repeat; 
         width: 100%;
-        height: 100%;
+        height: 100vh;
+        justify-content: center;
+        align-content: center;
+      }
+      .bloqueDeInfo{
+        padding: 1rem;
+      }
+      .containerImagenes{
+        top: 0%;
+        left: -500px;
+        background-image: url('../images/illustration-woman-online-desktop.svg'),url('../images/bg-pattern-desktop.svg');
+        background-position: -59px 70px,-435px -210px;
+        /* background-position: absolute; */
+        background-repeat: no-repeat;
+        background-clip: padding-box;
+        background-size: 100%, 200%;
+      }
+      .estilosCaja{
+        position: absolute;
+        z-index: 2;
+        background-size: 100%;
+        top: 265px;
+        left: -105px;
+        
+     
+      }
+      .relativeParent {
+        position: relative;
+        display: inherit;
+        
       }
   </style>
 </head>
 <body>
- <div name="fondo" class="fondogradiente">   
-<div name="whitebox" class="whitebox" >
-  <div name="title" class="titleFAQ">FAQ</div>
-  How many team members can I invite?
-  </style>
-</head>
-<body >
-<div name="whitebox" class="whitebox" >
-  Hoy many team members can I invite?
-  You can invite up to 2 additional users on the Free plan. There is no limit on 
-  team members for the Premium plan.
+  <div name="fondo" class="fondogradiente">
+  <div class="relativeParent">
+    <div name="caja" class="estilosCaja"><img src="../images/illustration-box-desktop.svg"></div>
+    <div name="whitebox" class="whitebox" >
+      <div class="containerImagenes"></div>
+    
+     <div name="bloqueDeInfo" class="bloqueDeInfo">
+    <div name="title" class="titleFAQ">FAQ</div>
+      Hoy many team members can I invite?
+      You can invite up to 2 additional users on the Free plan. There is no limit on 
+      eam members for the Premium plan.
 
-  What is the maximum file upload size?
-  No more than 2GB. All files in your account must fit your allotted storage space.
+      What is the maximum file upload size?
+      No more than 2GB. All files in your account must fit your allotted storage space.
 
-  How do I reset my password?
-  Click “Forgot password” from the login page or “Change password” from your profile page.
-  A reset link will be emailed to you.
+      How do I reset my password?
+      Click “Forgot password” from the login page or “Change password” from your profile page.
+      A reset link will be emailed to you.
 
-  Can I cancel my subscription?
-  Yes! Send us a message and we’ll process your request no questions asked.
+      Can I cancel my subscription?
+      Yes! Send us a message and we’ll process your request no questions asked.
 
-  Do you provide additional support?
-  Chat and email support is available 24/7. Phone lines are open during normal business hours.
+      Do you provide additional support?
+      Chat and email support is available 24/7. Phone lines are open during normal business hours.
 
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+      <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="#">Your Name Here</a>.
+      </div>
+    </div>    
     </div>
-</div>
+  </div>
 </div>
 </body>
 </html>
