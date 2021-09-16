@@ -10,6 +10,14 @@
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
+      @font-face {
+        font-family: "KumbhSans";
+        src: url('../Kumbh Sans Regular 400.ttf');
+      }
+      .imagenesMobile{
+        display: none;
+        
+      }
       body {
         margin: 0px;
         
@@ -20,16 +28,17 @@
           margin: auto;
           width: 750px;
           height: 400px;
+          box-shadow: 10px 10px 25px #bebebe;
          
 
           display: grid;
-          grid-template-columns: [col1] 50% [col2] 50%;
-           
-         /*  position: relative; */
-         
+          grid-template-columns: [col1] 50% [col2] 50%;          
       }
       .titleFAQ{
           font-weight: bold;
+          font-family: "KumbSans";
+          font-size: 42px;
+          margin-bottom: 15px;
       }
       .fondogradiente {
         display: flex;
@@ -42,13 +51,14 @@
       }
       .bloqueDeInfo{
         padding: 1rem;
+        align-self: center;
+        line-height: 35px;
       }
-      .containerImagenes{
+      .containerImagenesDesktop{
         top: 0%;
         left: -500px;
         background-image: url('../images/illustration-woman-online-desktop.svg'),url('../images/bg-pattern-desktop.svg');
         background-position: -59px 70px,-435px -210px;
-        /* background-position: absolute; */
         background-repeat: no-repeat;
         background-clip: padding-box;
         background-size: 100%, 200%;
@@ -67,33 +77,85 @@
         display: inherit;
         
       }
+      .question{
+        line-height: 10px;
+      }
+      .answer{
+        display: none;
+      }
+      @media only screen and (max-width: 752px){
+        .whitebox{
+          background-color: white;
+          border-radius: 12px;
+          margin: 1.5rem;
+          width: 100%;
+          height: 450px;
+          display: initial;
+          align-self: center;
+          background-clip: unset;
+          grid-template-columns: unset;
+          margin-top: 30%;
+          
+        }
+        .containerImagenesDesktop{
+        
+        display: none;
+      
+        
+      }
+      .imagenesMobile{
+        display: initial;
+        position: absolute;
+        background-image: url('../images/illustration-woman-online-mobile.svg');
+        background-repeat: no-repeat;
+        
+        margin-top: 45px;
+        
+        width: 300px;
+        height: 180px;
+        z-index: 5;
+      }
+      .estilosCaja{
+        display: none;
+      }
+      .bloqueDeInfo{
+        padding: 1rem;
+        align-self: center;
+        line-height: 30px;
+        margin-top: 25%;
+      }
+      .titleFAQ{
+        margin-bottom: 25px;
+      }
+    
   </style>
 </head>
 <body>
   <div name="fondo" class="fondogradiente">
-  <div class="relativeParent">
+    <div class="imagenesMobile"></div>
+    <div class="relativeParent">
     <div name="caja" class="estilosCaja"><img src="../images/illustration-box-desktop.svg"></div>
     <div name="whitebox" class="whitebox" >
-      <div class="containerImagenes"></div>
-    
+      <div class="containerImagenesDesktop"></div>
+      
      <div name="bloqueDeInfo" class="bloqueDeInfo">
     <div name="title" class="titleFAQ">FAQ</div>
-      Hoy many team members can I invite?
-      You can invite up to 2 additional users on the Free plan. There is no limit on 
-      eam members for the Premium plan.
+      <span class="question"> How many team members can I invite? </span> <br>
+      <span class="answer">You can invite up to 2 additional users on the Free plan. There is no limit on 
+        eam members for the Premium plan.</span>
+      <span class="question">What is the maximum file upload size?</span> <br>
+      <span class="answer">No more than 2GB. All files in your account must fit your allotted storage space.</span>
+      <span class="question">How do I reset my password?</span> <br>
+      <span class="answer">Click “Forgot password” from the login page or “Change password” from your profile page.
+        A reset link will be emailed to you.</span>
+      <span class="question"> Can I cancel my subscription?</span> <br>
+      <span class="answer">Yes! Send us a message and we’ll process your request no questions asked.</span>
+      <span class="question">Do you provide additional support?</span> <br>
+      <span class="answer">Chat and email support is available 24/7. Phone lines are open during normal business hours.</span>     
+      
 
-      What is the maximum file upload size?
-      No more than 2GB. All files in your account must fit your allotted storage space.
-
-      How do I reset my password?
-      Click “Forgot password” from the login page or “Change password” from your profile page.
-      A reset link will be emailed to you.
-
-      Can I cancel my subscription?
-      Yes! Send us a message and we’ll process your request no questions asked.
-
-      Do you provide additional support?
-      Chat and email support is available 24/7. Phone lines are open during normal business hours.
+      
+      
 
       <div class="attribution">
         Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
