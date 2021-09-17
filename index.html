@@ -3,167 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+ <!--  <link href="/docs/5.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous"> -->
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
   <title>Frontend Mentor | FAQ Accordion Card</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-      @font-face {
-        font-family: "KumbhSans";
-        src: url('../Kumbh Sans Regular 400.ttf');
+<style>
+  .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
       }
-      .imagenesMobile{
-        display: none;
-        
-      }
-      body {
-        margin: 0px;
-        
-      }
-      .whitebox{
-          background-color: white;
-          border-radius: 12px;
-          margin: auto;
-          width: 750px;
-          height: 400px;
-          box-shadow: 10px 10px 25px #bebebe;
-         
 
-          display: grid;
-          grid-template-columns: [col1] 50% [col2] 50%;          
-      }
-      .titleFAQ{
-          font-weight: bold;
-          font-family: "KumbSans";
-          font-size: 42px;
-          margin-bottom: 15px;
-      }
-      .fondogradiente {
-        display: flex;
-        background-image: linear-gradient(#E940D7, #941FCF);
-        background-repeat: no-repeat; 
-        width: 100%;
-        height: 100vh;
-        justify-content: center;
-        align-content: center;
-      }
-      .bloqueDeInfo{
-        padding: 1rem;
-        align-self: center;
-        line-height: 35px;
-      }
-      .containerImagenesDesktop{
-        top: 0%;
-        left: -500px;
-        background-image: url('../images/illustration-woman-online-desktop.svg'),url('../images/bg-pattern-desktop.svg');
-        background-position: -59px 70px,-435px -210px;
-        background-repeat: no-repeat;
-        background-clip: padding-box;
-        background-size: 100%, 200%;
-      }
-      .estilosCaja{
-        position: absolute;
-        z-index: 2;
-        background-size: 100%;
-        top: 255px;
-        left: -115px;
-        
-     
-      }
-      .relativeParent {
-        position: relative;
-        display: inherit;
-        
-      }
-      .question{
-        line-height: 10px;
-      }
-      .answer{
-        display: none;
-      }
-      @media only screen and (max-width: 752px), (orientation: portrait){
-        .whitebox{
-          background-color: white;
-          border-radius: 12px;
-          margin: 1.5rem;
-          width: 100%;
-          height: 450px;
-          display: initial;
-          align-self: center;
-          background-clip: unset;
-          grid-template-columns: unset;
-          margin-top: 30%;
-          
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
         }
-        .containerImagenesDesktop{
-        
-        display: none;
-      
-        
       }
-      .imagenesMobile{
-        display: initial;
-        position: absolute;
-        background-image: url('../images/illustration-woman-online-mobile.svg');
-        background-repeat: no-repeat;
-        
-        margin-top: 45px;
-        
-        width: 300px;
-        height: 180px;
-        z-index: 5;
-      }
-      .estilosCaja{
-        display: none;
-      }
-      .bloqueDeInfo{
-        padding: 1rem;
-        align-self: center;
-        line-height: 30px;
-        margin-top: 25%;
-      }
-      .titleFAQ{
-        margin-bottom: 25px;
-      }
-    
-  </style>
+</style>
 </head>
-<body>
-  <div name="fondo" class="fondogradiente">
-    <div class="imagenesMobile"></div>
-    <div class="relativeParent">
-    <div name="caja" class="estilosCaja"><img src="../images/illustration-box-desktop.svg"></div>
-    <div name="whitebox" class="whitebox" >
-      <div class="containerImagenesDesktop"></div>
-      
-     <div name="bloqueDeInfo" class="bloqueDeInfo">
-    <div name="title" class="titleFAQ">FAQ</div>
-      <span class="question"> How many team members can I invite? </span> <br>
-      <span class="answer">You can invite up to 2 additional users on the Free plan. There is no limit on 
-        eam members for the Premium plan.</span>
-      <span class="question">What is the maximum file upload size?</span> <br>
-      <span class="answer">No more than 2GB. All files in your account must fit your allotted storage space.</span>
-      <span class="question">How do I reset my password?</span> <br>
-      <span class="answer">Click “Forgot password” from the login page or “Change password” from your profile page.
-        A reset link will be emailed to you.</span>
-      <span class="question"> Can I cancel my subscription?</span> <br>
-      <span class="answer">Yes! Send us a message and we’ll process your request no questions asked.</span>
-      <span class="question">Do you provide additional support?</span> <br>
-      <span class="answer">Chat and email support is available 24/7. Phone lines are open during normal business hours.</span>     
-      
-
-      
-      
-
-      <div class="attribution">
-        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-        Coded by <a href="#">Your Name Here</a>.
+<body class="d-flex h-100 text-center text-white bg-dark">
+    
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="mb-auto">
+      <div>
+        <h3 class="float-md-start mb-0">Cover</h3>
+        <nav class="nav nav-masthead justify-content-center float-md-end">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link" href="#">Features</a>
+          <a class="nav-link" href="#">Contact</a>
+        </nav>
       </div>
-    </div>    
-    </div>
+    </header>
+  
+    <main class="px-3">
+      <h1>Cover your page.</h1>
+      <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
+      <p class="lead">
+        <a href="#" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Learn more</a>
+      </p>
+    </main>
+  
+    <footer class="mt-auto text-white-50">
+      <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
+    </footer>
   </div>
-</div>
+  
+  
+      
+    </body>
 </body>
 </html>
